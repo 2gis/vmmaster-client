@@ -22,7 +22,8 @@ class BadStatusCode(Exception):
 
 class vmmaster(object):
     _commands = {
-        "run_script": ("POST", "/runScript")
+        "run_script": ("POST", "/runScript"),
+        "label": ("POST", "/vmmasterLabel")
     }
 
     def __init__(self, driver):
@@ -52,3 +53,9 @@ class vmmaster(object):
         if command:
             data.update({"command": command})
         return self._make_request("run_script", json.dumps(data))
+
+    def label(self, label):
+        data = {
+            "label": label
+        }
+        return self._make_request("label", json.dumps(data))
