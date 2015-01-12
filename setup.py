@@ -1,9 +1,10 @@
 # coding: utf-8
+from uuid import uuid1
 from setuptools import setup,  find_packages
 from pip.req import parse_requirements
 
 # parse_requirements() returns generator of pip.req.InstallRequirement objects
-install_reqs = parse_requirements("requirements.txt")
+install_reqs = parse_requirements("requirements.txt", session=uuid1())
 requirements = [str(ir.req) for ir in install_reqs]
 
 setup(
