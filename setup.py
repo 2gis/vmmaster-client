@@ -13,5 +13,6 @@ setup(
     description='vmmaster client for additional vmmaster api',
     url='https://github.com/nwlunatic/vmmaster-client',
     packages=find_packages(),
-    install_requires=requirements
-)
+    install_requires=[
+        'requests==2.3.0',
+    ])
