@@ -21,9 +21,10 @@ class BadStatusCode(Exception):
 
 
 class vmmaster(object):
+    prefix = "/vmmaster"
     _commands = {
-        "run_script": ("POST", "/runScript"),
-        "label": ("POST", "/vmmasterLabel")
+        "run_script": ("POST", prefix + "/runScript"),
+        "label": ("POST", prefix + "/vmmasterLabel")
     }
 
     def __init__(self, driver):
